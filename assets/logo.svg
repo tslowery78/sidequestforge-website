@@ -1,12 +1,19 @@
 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
   <rect width="40" height="40" rx="8" fill="url(#gradient)"/>
-  <path d="M12 16L20 12L28 16V28L20 32L12 28V16Z" stroke="white" stroke-width="2" fill="none"/>
-  <circle cx="20" cy="20" r="3" fill="white"/>
-  <path d="M16 24L20 22L24 24" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Forge/anvil shape -->
+  <path d="M10 20L15 15L25 15L30 20L25 25L15 25Z" stroke="white" stroke-width="2" fill="none"/>
+  <!-- Hammer -->
+  <path d="M18 12L22 16" stroke="white" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="17" cy="11" r="2" fill="white"/>
+  <!-- Adventure compass -->
+  <circle cx="20" cy="20" r="3" stroke="white" stroke-width="1.5" fill="none"/>
+  <path d="M20 17L20 23M17 20L23 20" stroke="white" stroke-width="1" stroke-linecap="round"/>
+  <!-- Road/path -->
+  <path d="M8 30Q20 28 32 30" stroke="white" stroke-width="1.5" fill="none"/>
   <defs>
     <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="0%" style="stop-color:#2E86AB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#A23B72;stop-opacity:1" />
     </linearGradient>
   </defs>
 </svg> 

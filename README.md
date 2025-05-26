@@ -1,23 +1,35 @@
-# SideQuest Forge Studio Website
+# SideQuest Forge LLC Website
 
-Official website for SideQuest Forge Studio - an indie game development studio creating innovative gaming experiences.
+Official website for SideQuest Forge LLC - crafting adventures, one app at a time.
 
-## 🎮 About
+## 🚗 About
 
-SideQuest Forge Studio is dedicated to creating unique gaming experiences that push boundaries and tell compelling stories. Our team believes that the best games come from taking creative risks and exploring uncharted territories in game design.
+SideQuest Forge LLC creates engaging mobile experiences that bring families together and turn everyday moments into memorable adventures. We believe every journey should be an adventure, focusing on family connections, learning, and quality experiences.
 
 ## 🌐 Website
 
 Visit our live website: [sidequestforgestudio.com](https://sidequestforgestudio.com)
 
-## 🎯 Featured Games
+## 📱 Featured Apps
 
-### PlateGame
-An innovative puzzle-platformer that challenges players to think creatively about physics and momentum. Navigate through intricate levels using plates as your tools to overcome obstacles and reach new heights.
+### PlateTag 66
+The ultimate license plate road trip game. Turn every road trip into an epic license plate hunting adventure with beautiful state murals, fascinating facts, and unforgettable family memories.
 
-- **Platform:** iOS
-- **Genre:** Puzzle Platformer
-- **Status:** Available on App Store
+**Key Features:**
+- License plate hunting across all 50 states
+- Beautiful state murals and educational content
+- Trip management and GPS integration
+- Achievement system and progress tracking
+- Offline-ready functionality
+- Family-friendly design
+
+**Pricing:**
+- Monthly: $1.99/month
+- Annual: $12.99/year  
+- Lifetime: $29.99 one-time
+
+**Platform:** iOS (App Store)
+**Status:** Available Now
 
 ## 🛠️ Technical Details
 
@@ -33,13 +45,16 @@ This website is built with:
 ```
 sidequestforge_studio_website/
 ├── assets/
-│   ├── logo.svg              # Studio logo
-│   ├── plategame_hero.png    # PlateGame hero image
-│   └── app-store-badge.svg   # App Store download badge
-├── index.html                # Homepage
-├── plategame.html           # PlateGame detail page
-├── styles.css               # Main stylesheet
-└── README.md               # This file
+│   ├── logo.svg                 # Company logo
+│   ├── platetag66_icon.png      # PlateTag 66 app icon
+│   ├── platetag66_hero.png      # PlateTag 66 hero image
+│   └── app-store-badge.svg      # App Store download badge
+├── index.html                   # Homepage
+├── platetag66.html             # PlateTag 66 landing page
+├── privacy.html                # Privacy Policy
+├── terms.html                  # Terms of Service
+├── styles.css                  # Main stylesheet
+└── README.md                   # This file
 ```
 
 ## 🚀 Local Development
@@ -56,28 +71,44 @@ To run the website locally:
 
 ## 📱 Features
 
+- **Family-Focused Design** - Appeals to families and road trip enthusiasts
+- **Educational Content** - Learning integrated into entertainment
 - **Responsive Design** - Works on all devices
 - **Modern UI/UX** - Clean, professional design
 - **Fast Loading** - Optimized assets and code
 - **SEO Optimized** - Proper meta tags and structure
-- **Accessible** - WCAG compliant design
+- **Legal Compliance** - Privacy Policy and Terms of Service
 
 ## 🎨 Design System
 
-- **Primary Colors:** Purple gradient (#6366f1 to #8b5cf6)
+- **Brand Colors:** 
+  - Primary Blue: #2E86AB
+  - Sunset Orange: #F24236
+  - Forest Green: #A23B72
+  - Warm Gray: #F8F9FA
 - **Typography:** Inter font family
 - **Layout:** CSS Grid and Flexbox
 - **Animations:** Smooth transitions and hover effects
 
+## 🎯 Target Audience
+
+- Families planning road trips
+- Educational app enthusiasts
+- Parents seeking screen-time alternatives
+- Travel and geography enthusiasts
+- App store customers
+
 ## 📞 Contact
 
-- **Email:** hello@sidequestforgestudio.com
-- **Twitter:** @SideQuestForge
+- **General:** hello@sidequestforgestudio.com
+- **Support:** support@sidequestforgestudio.com
+- **Privacy:** privacy@sidequestforgestudio.com
+- **Legal:** legal@sidequestforgestudio.com
 
 ## 📄 License
 
-© 2024 SideQuest Forge Studio. All rights reserved.
+© 2024 SideQuest Forge LLC. All rights reserved.
 
 ---
 
-Built with ❤️ by SideQuest Forge Studio 
+Built with ❤️ for families who love to explore 
