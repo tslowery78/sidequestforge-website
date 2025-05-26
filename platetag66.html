@@ -383,6 +383,10 @@
             
             // Prevent body scrolling when modal is open
             document.body.style.overflow = 'hidden';
+            document.body.style.position = 'fixed';
+            document.body.style.width = '100%';
+            
+            console.log('Modal should now be visible');
         }
 
         function closeModal() {
@@ -397,11 +401,20 @@
             modal.classList.remove('active');
             
             // Restore body scrolling
-            document.body.style.overflow = 'auto';
+            document.body.style.overflow = '';
+            document.body.style.position = '';
+            document.body.style.width = '';
         }
 
         // Close modal when clicking outside the image
         document.getElementById('imageModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Close modal when touching outside the image (mobile)
+        document.getElementById('imageModal').addEventListener('touchend', function(e) {
             if (e.target === this) {
                 closeModal();
             }
@@ -412,6 +425,41 @@
             if (e.key === 'Escape') {
                 closeModal();
             }
+        });
+
+        // Add touch event listeners to screenshot items for better mobile support
+        document.addEventListener('DOMContentLoaded', function() {
+            const screenshotItems = document.querySelectorAll('.screenshot-item');
+            screenshotItems.forEach(function(item) {
+                // Add touch support for mobile
+                item.addEventListener('touchstart', function(e) {
+                    console.log('Touch start on screenshot item');
+                });
+                
+                item.addEventListener('touchend', function(e) {
+                    console.log('Touch end on screenshot item');
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    // Get the onclick attribute and extract the parameters
+                    const onclick = this.getAttribute('onclick');
+                    if (onclick) {
+                        // Parse the openModal call
+                        const match = onclick.match(/openModal\('([^']+)',\s*'([^']+)'\)/);
+                        if (match) {
+                            const imageSrc = match[1];
+                            const caption = match[2];
+                            openModal(imageSrc, caption);
+                        }
+                    }
+                });
+                
+                // Also add click event as fallback
+                item.addEventListener('click', function(e) {
+                    console.log('Click on screenshot item');
+                    // Let the onclick attribute handle this
+                });
+            });
         });
     </script>
 </body>
