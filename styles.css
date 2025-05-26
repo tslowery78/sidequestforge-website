@@ -504,6 +504,15 @@ a {
     color: #475569;
 }
 
+.contact-method a {
+    transition: color 0.3s ease;
+}
+
+.contact-method a:hover {
+    color: var(--sunset-orange) !important;
+    text-decoration: underline;
+}
+
 .contact-icon {
     font-size: 1.5rem;
 }
