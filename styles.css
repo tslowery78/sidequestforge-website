@@ -1731,17 +1731,7 @@ a {
     }
 
     .modal-nav {
-        width: 40px;
-        height: 40px;
-        font-size: 1.5rem;
-    }
-
-    .modal-prev {
-        left: 10px;
-    }
-
-    .modal-next {
-        right: 10px;
+        display: none;
     }
 
     .image-counter {
@@ -1753,6 +1743,15 @@ a {
         bottom: 50px;
         font-size: 1rem;
         padding: 0.75rem 1.5rem;
+    }
+
+    /* Show mobile-specific instruction and hide desktop instruction */
+    .screenshots-instruction {
+        display: none;
+    }
+
+    .screenshots-instruction-mobile {
+        display: block !important;
     }
 }
 
