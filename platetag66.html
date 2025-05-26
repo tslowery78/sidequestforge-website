@@ -121,7 +121,7 @@
         <section class="app-screenshots">
             <div class="container">
                 <h2 class="section-title">Screenshots</h2>
-                <p style="text-align: center; color: var(--text-medium); margin-bottom: 2rem;">Click any image to view full size</p>
+                <p style="text-align: center; color: var(--text-medium); margin-bottom: 2rem;">Click any image to view full size • Use arrow keys or swipe to navigate</p>
                 <div class="screenshots-carousel">
                     <div class="screenshot-item" onclick="openModal('assets/main_screen.png', 'Main game screen with license plate collection')">
                         <img src="assets/main_screen.png" alt="PlateTag 66 Main Game Screen" class="screenshot">
@@ -351,8 +351,11 @@
     <div id="imageModal" class="image-modal">
         <div class="modal-content">
             <span class="modal-close" onclick="closeModal()">&times;</span>
+            <button class="modal-nav modal-prev" onclick="prevImage()">‹</button>
+            <button class="modal-nav modal-next" onclick="nextImage()">›</button>
             <img id="modalImage" class="modal-image" src="" alt="">
             <div id="modalCaption" class="modal-caption"></div>
+            <div id="imageCounter" class="image-counter"></div>
         </div>
     </div>
 
@@ -361,6 +364,20 @@
         document.querySelector('.nav-toggle').addEventListener('click', function() {
             document.querySelector('.nav-menu').classList.toggle('active');
         });
+
+        // Modal state variables
+        let currentImageIndex = 0;
+        let scrollPosition = 0;
+        const images = [
+            { src: 'assets/main_screen.png', caption: 'Main game screen with license plate collection' },
+            { src: 'assets/Texas_Mural.png', caption: 'Beautiful Texas state mural with facts' },
+            { src: 'assets/Arizona.png', caption: 'Arizona state collection and information' },
+            { src: 'assets/Hawaii.png', caption: 'Hawaii state mural and travel facts' },
+            { src: 'assets/Alaska_Mural.png', caption: 'Alaska state mural and adventure details' },
+            { src: 'assets/VT_landscape_mural.png', caption: 'Vermont landscape mural with scenic beauty' },
+            { src: 'assets/OK_story_mural.png', caption: 'Oklahoma story mural with rich history' },
+            { src: 'assets/MN_mural.png', caption: 'Minnesota mural showcasing state highlights' }
+        ];
 
         // Image modal functionality
         function openModal(imageSrc, caption) {
@@ -374,9 +391,15 @@
                 return;
             }
             
+            // Store current scroll position
+            scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // Find the current image index
+            currentImageIndex = images.findIndex(img => img.src === imageSrc);
+            if (currentImageIndex === -1) currentImageIndex = 0;
+            
             // Set image source and caption
-            modalImage.src = imageSrc;
-            modalCaption.textContent = caption;
+            updateModalImage();
             
             // Show modal with animation
             modal.classList.add('active');
@@ -384,6 +407,7 @@
             // Prevent body scrolling when modal is open
             document.body.style.overflow = 'hidden';
             document.body.style.position = 'fixed';
+            document.body.style.top = `-${scrollPosition}px`;
             document.body.style.width = '100%';
             
             console.log('Modal should now be visible');
@@ -400,10 +424,39 @@
             // Hide modal with animation
             modal.classList.remove('active');
             
-            // Restore body scrolling
+            // Restore body scrolling and position
             document.body.style.overflow = '';
             document.body.style.position = '';
+            document.body.style.top = '';
             document.body.style.width = '';
+            
+            // Restore scroll position
+            window.scrollTo(0, scrollPosition);
+        }
+
+        function updateModalImage() {
+            const modalImage = document.getElementById('modalImage');
+            const modalCaption = document.getElementById('modalCaption');
+            const imageCounter = document.getElementById('imageCounter');
+            
+            if (modalImage && modalCaption) {
+                modalImage.src = images[currentImageIndex].src;
+                modalCaption.textContent = images[currentImageIndex].caption;
+                
+                if (imageCounter) {
+                    imageCounter.textContent = `${currentImageIndex + 1} / ${images.length}`;
+                }
+            }
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            updateModalImage();
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            updateModalImage();
         }
 
         // Close modal when clicking outside the image
@@ -424,6 +477,10 @@
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 closeModal();
+            } else if (e.key === 'ArrowLeft') {
+                prevImage();
+            } else if (e.key === 'ArrowRight') {
+                nextImage();
             }
         });
 
@@ -461,6 +518,34 @@
                 });
             });
         });
+
+        // Touch/swipe support for modal
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.getElementById('imageModal').addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.getElementById('imageModal').addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const swipeDistance = touchEndX - touchStartX;
+            
+            if (Math.abs(swipeDistance) > swipeThreshold) {
+                if (swipeDistance > 0) {
+                    // Swipe right - go to previous image
+                    prevImage();
+                } else {
+                    // Swipe left - go to next image
+                    nextImage();
+                }
+            }
+        }
     </script>
 </body>
 </html> 
