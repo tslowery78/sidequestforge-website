@@ -121,26 +121,39 @@
         <section class="app-screenshots">
             <div class="container">
                 <h2 class="section-title">Screenshots</h2>
+                <p style="text-align: center; color: var(--text-medium); margin-bottom: 2rem;">Click any image to view full size</p>
                 <div class="screenshots-carousel">
-                    <div class="screenshot-item">
+                    <div class="screenshot-item" onclick="openModal('assets/main_screen.png', 'Main game screen with license plate collection')">
                         <img src="assets/main_screen.png" alt="PlateTag 66 Main Game Screen" class="screenshot">
                         <p class="screenshot-caption">Main game screen with license plate collection</p>
                     </div>
-                    <div class="screenshot-item">
+                    <div class="screenshot-item" onclick="openModal('assets/Texas_Mural.png', 'Beautiful Texas state mural with facts')">
                         <img src="assets/Texas_Mural.png" alt="Texas State Mural" class="screenshot">
                         <p class="screenshot-caption">Beautiful Texas state mural with facts</p>
                     </div>
-                    <div class="screenshot-item">
+                    <div class="screenshot-item" onclick="openModal('assets/Arizona.png', 'Arizona state collection and information')">
                         <img src="assets/Arizona.png" alt="Arizona State Mural" class="screenshot">
                         <p class="screenshot-caption">Arizona state collection and information</p>
                     </div>
-                    <div class="screenshot-item">
+                    <div class="screenshot-item" onclick="openModal('assets/Hawaii.png', 'Hawaii state mural and travel facts')">
                         <img src="assets/Hawaii.png" alt="Hawaii State Mural" class="screenshot">
                         <p class="screenshot-caption">Hawaii state mural and travel facts</p>
                     </div>
-                    <div class="screenshot-item">
+                    <div class="screenshot-item" onclick="openModal('assets/Alaska_Mural.png', 'Alaska state mural and adventure details')">
                         <img src="assets/Alaska_Mural.png" alt="Alaska State Mural" class="screenshot">
                         <p class="screenshot-caption">Alaska state mural and adventure details</p>
+                    </div>
+                    <div class="screenshot-item" onclick="openModal('assets/VT_landscape_mural.png', 'Vermont landscape mural with scenic beauty')">
+                        <img src="assets/VT_landscape_mural.png" alt="Vermont State Mural" class="screenshot">
+                        <p class="screenshot-caption">Vermont landscape mural with scenic beauty</p>
+                    </div>
+                    <div class="screenshot-item" onclick="openModal('assets/OK_story_mural.png', 'Oklahoma story mural with rich history')">
+                        <img src="assets/OK_story_mural.png" alt="Oklahoma State Mural" class="screenshot">
+                        <p class="screenshot-caption">Oklahoma story mural with rich history</p>
+                    </div>
+                    <div class="screenshot-item" onclick="openModal('assets/MN_mural.png', 'Minnesota mural showcasing state highlights')">
+                        <img src="assets/MN_mural.png" alt="Minnesota State Mural" class="screenshot">
+                        <p class="screenshot-caption">Minnesota mural showcasing state highlights</p>
                     </div>
                 </div>
             </div>
@@ -334,10 +347,55 @@
         </div>
     </footer>
 
+    <!-- Image Modal -->
+    <div id="imageModal" class="image-modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" class="modal-image" src="" alt="">
+            <div id="modalCaption" class="modal-caption"></div>
+        </div>
+    </div>
+
     <script>
         // Simple mobile menu toggle
         document.querySelector('.nav-toggle').addEventListener('click', function() {
             document.querySelector('.nav-menu').classList.toggle('active');
+        });
+
+        // Image modal functionality
+        function openModal(imageSrc, caption) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const modalCaption = document.getElementById('modalCaption');
+            
+            modal.style.display = 'block';
+            modalImage.src = imageSrc;
+            modalCaption.textContent = caption;
+            
+            // Prevent body scrolling when modal is open
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+            
+            // Restore body scrolling
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside the image
+        document.getElementById('imageModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
         });
     </script>
 </body>
