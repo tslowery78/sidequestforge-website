@@ -364,21 +364,37 @@
 
         // Image modal functionality
         function openModal(imageSrc, caption) {
+            console.log('Opening modal with:', imageSrc, caption);
             const modal = document.getElementById('imageModal');
             const modalImage = document.getElementById('modalImage');
             const modalCaption = document.getElementById('modalCaption');
             
-            modal.style.display = 'block';
+            if (!modal || !modalImage || !modalCaption) {
+                console.error('Modal elements not found');
+                return;
+            }
+            
+            // Set image source and caption
             modalImage.src = imageSrc;
             modalCaption.textContent = caption;
+            
+            // Show modal with animation
+            modal.classList.add('active');
             
             // Prevent body scrolling when modal is open
             document.body.style.overflow = 'hidden';
         }
 
         function closeModal() {
+            console.log('Closing modal');
             const modal = document.getElementById('imageModal');
-            modal.style.display = 'none';
+            if (!modal) {
+                console.error('Modal not found');
+                return;
+            }
+            
+            // Hide modal with animation
+            modal.classList.remove('active');
             
             // Restore body scrolling
             document.body.style.overflow = 'auto';
