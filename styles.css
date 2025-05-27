@@ -595,7 +595,13 @@ a {
 }
 
 .footer-logo .logo {
-    filter: brightness(0) invert(1);
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.footer-logo video.logo {
+    filter: none;
 }
 
 .footer-links {
@@ -680,6 +686,17 @@ a {
     justify-content: center;
     opacity: 0;
     transition: opacity 0.3s ease;
+}
+
+.app-overlay .btn {
+    color: white !important;
+    border-color: white !important;
+    background: transparent !important;
+}
+
+.app-overlay .btn:hover {
+    background: white !important;
+    color: var(--primary-blue) !important;
 }
 
 .app-card:hover .app-overlay {
@@ -1927,12 +1944,28 @@ a {
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: 1rem;
+        gap: 2rem;
     }
 
-    .footer-links,
+    .footer-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin: 1rem 0;
+    }
+    
+    .footer-links a {
+        padding: 0.5rem;
+        display: inline-block;
+    }
+    
     .footer-social {
         justify-content: center;
+        gap: 1.5rem;
+    }
+    
+    .footer-logo {
+        margin-bottom: 1rem;
     }
 
     .screenshots-grid,
