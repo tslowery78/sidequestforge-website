@@ -533,33 +533,63 @@
         document.addEventListener('DOMContentLoaded', function() {
             const screenshotItems = document.querySelectorAll('.screenshot-item');
             screenshotItems.forEach(function(item) {
-                // Add touch support for mobile
-                item.addEventListener('touchstart', function(e) {
-                    console.log('Touch start on screenshot item');
-                });
+                let touchStartY = 0;
+                let touchStartX = 0;
+                let touchStartTime = 0;
+                let hasMoved = false;
                 
-                item.addEventListener('touchend', function(e) {
-                    console.log('Touch end on screenshot item');
-                    e.preventDefault();
-                    e.stopPropagation();
+                // Track touch start
+                item.addEventListener('touchstart', function(e) {
+                    touchStartY = e.touches[0].clientY;
+                    touchStartX = e.touches[0].clientX;
+                    touchStartTime = Date.now();
+                    hasMoved = false;
+                }, { passive: true });
+                
+                // Track touch movement
+                item.addEventListener('touchmove', function(e) {
+                    const touchY = e.touches[0].clientY;
+                    const touchX = e.touches[0].clientX;
+                    const deltaY = Math.abs(touchY - touchStartY);
+                    const deltaX = Math.abs(touchX - touchStartX);
                     
-                    // Get the onclick attribute and extract the parameters
-                    const onclick = this.getAttribute('onclick');
-                    if (onclick) {
-                        // Parse the openModal call
-                        const match = onclick.match(/openModal\('([^']+)',\s*'([^']+)'\)/);
-                        if (match) {
-                            const imageSrc = match[1];
-                            const caption = match[2];
-                            openModal(imageSrc, caption);
+                    // If user moved more than 10px in any direction, consider it scrolling
+                    if (deltaY > 10 || deltaX > 10) {
+                        hasMoved = true;
+                    }
+                }, { passive: true });
+                
+                // Handle touch end
+                item.addEventListener('touchend', function(e) {
+                    const touchDuration = Date.now() - touchStartTime;
+                    
+                    // Only open modal if:
+                    // 1. User didn't move much (not scrolling)
+                    // 2. Touch was quick (less than 500ms) - like a tap
+                    if (!hasMoved && touchDuration < 500) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        
+                        // Get the onclick attribute and extract the parameters
+                        const onclick = this.getAttribute('onclick');
+                        if (onclick) {
+                            // Parse the openModal call
+                            const match = onclick.match(/openModal\('([^']+)',\s*'([^']+)'\)/);
+                            if (match) {
+                                const imageSrc = match[1];
+                                const caption = match[2];
+                                openModal(imageSrc, caption);
+                            }
                         }
                     }
-                });
+                }, { passive: false });
                 
-                // Also add click event as fallback
+                // Desktop click event (unchanged)
                 item.addEventListener('click', function(e) {
-                    console.log('Click on screenshot item');
-                    // Let the onclick attribute handle this
+                    // Only handle click if it's not a touch device or if touch events aren't supported
+                    if (!('ontouchstart' in window)) {
+                        // Let the onclick attribute handle this for desktop
+                    }
                 });
             });
         });
