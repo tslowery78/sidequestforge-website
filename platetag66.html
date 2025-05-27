@@ -69,7 +69,7 @@
                     </div>
                     <div class="app-hero-visual">
                         <div class="app-hero-image">
-                            <img src="assets/main_screen.png" alt="PlateTag 66 Main Screen" class="hero-screenshot">
+                            <img src="assets/collected_plates_sunset.png" alt="PlateTag 66 - Collected Plates at Sunset" class="hero-screenshot">
                         </div>
                     </div>
                 </div>
@@ -130,6 +130,14 @@
                 <p class="screenshots-instruction" style="text-align: center; color: var(--text-medium); margin-bottom: 2rem;">Click any image to view full size • Use arrow keys or click arrows to navigate</p>
                 <p class="screenshots-instruction-mobile" style="text-align: center; color: var(--text-medium); margin-bottom: 2rem; display: none;">Tap any image to view full size • Swipe left or right to navigate</p>
                 <div class="screenshots-carousel">
+                    <div class="screenshot-item" onclick="openModal('assets/sunset_diner.png', 'Sunset diner scene - perfect road trip atmosphere')">
+                        <img src="assets/sunset_diner.png" alt="Sunset Diner Scene" class="screenshot">
+                        <p class="screenshot-caption">Sunset diner scene - perfect road trip atmosphere</p>
+                    </div>
+                    <div class="screenshot-item" onclick="openModal('assets/collected_plates_sunset.png', 'Collected license plates at golden hour')">
+                        <img src="assets/collected_plates_sunset.png" alt="Collected Plates at Sunset" class="screenshot">
+                        <p class="screenshot-caption">Collected license plates at golden hour</p>
+                    </div>
                     <div class="screenshot-item" onclick="openModal('assets/main_screen.png', 'Main game screen with license plate collection')">
                         <img src="assets/main_screen.png" alt="PlateTag 66 Main Game Screen" class="screenshot">
                         <p class="screenshot-caption">Main game screen with license plate collection</p>
@@ -404,6 +412,8 @@
         let currentImageIndex = 0;
         let scrollPosition = 0;
         const images = [
+            { src: 'assets/sunset_diner.png', caption: 'Sunset diner scene - perfect road trip atmosphere' },
+            { src: 'assets/collected_plates_sunset.png', caption: 'Collected license plates at golden hour' },
             { src: 'assets/main_screen.png', caption: 'Main game screen with license plate collection' },
             { src: 'assets/Texas_Mural.png', caption: 'Beautiful Texas state mural with facts' },
             { src: 'assets/Arizona.png', caption: 'Arizona state collection and information' },
