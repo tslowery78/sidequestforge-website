@@ -258,6 +258,7 @@
         // Theme management
         const themeToggle = document.getElementById('themeToggle');
         const html = document.documentElement;
+        const navMenu = document.querySelector('.nav-menu');
         
         // Set default theme to dark
         let currentTheme = localStorage.getItem('theme') || 'dark';
@@ -285,7 +286,15 @@
 
         // Simple mobile menu toggle
         document.querySelector('.nav-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-menu').classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on navigation links
+        document.querySelectorAll('.nav-menu .nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                // Close the mobile menu
+                navMenu.classList.remove('active');
+            });
         });
 
         // Smooth scrolling for navigation links
