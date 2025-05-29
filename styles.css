@@ -1204,8 +1204,17 @@ a {
 
 .status-description {
     margin: 0;
-    opacity: 0.9;
+    opacity: 1;
     font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    text-shadow: 
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000,
+        0 0 3px #000,
+        0 0 6px #000;
 }
 
 /* Launch CTA */
