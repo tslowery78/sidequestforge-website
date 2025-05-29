@@ -866,8 +866,9 @@ a {
 }
 
 .newsletter-section h3 {
-    color: var(--text-dark);
+    color: var(--text-primary);
     margin-bottom: 0.5rem;
+    font-weight: 600;
 }
 
 .newsletter-section p {
