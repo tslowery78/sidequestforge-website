@@ -968,6 +968,13 @@ a {
     background: white;
 }
 
+/* Make "Choose Your Adventure" title stand out better */
+.app-pricing .section-title {
+    color: var(--text-dark);
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
 .pricing-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
