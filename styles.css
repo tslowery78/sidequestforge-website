@@ -438,6 +438,8 @@ a {
     padding: 1rem 2rem;
     border-radius: 8px;
     font-weight: 600;
+    position: relative;
+    z-index: 10;
 }
 
 .game-content {
@@ -2093,6 +2095,29 @@ a {
 
     .screenshots-instruction-mobile {
         display: block !important;
+    }
+
+    /* Fix coming soon overlay layering on mobile */
+    .app-card.coming-soon {
+        position: relative;
+        overflow: visible;
+    }
+
+    .app-card.coming-soon .app-image.placeholder {
+        position: relative;
+        min-height: 200px;
+    }
+
+    .coming-soon-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 15;
+        width: auto;
+        white-space: nowrap;
+        max-width: 90%;
+        text-align: center;
     }
 }
 
