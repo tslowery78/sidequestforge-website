@@ -1115,6 +1115,13 @@ a {
     background: white;
 }
 
+/* Make FAQ section title stand out better */
+.app-faq .section-title {
+    color: var(--text-dark);
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
 .faq-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -1142,6 +1149,13 @@ a {
 .app-development {
     padding: 80px 0;
     background: var(--warm-gray);
+}
+
+/* Make Development section title stand out better */
+.app-development .section-title {
+    color: var(--text-dark);
+    font-weight: 700;
+    font-size: 2.5rem;
 }
 
 .development-content {
@@ -1239,7 +1253,10 @@ a {
 .launch-description {
     font-size: 1.2rem;
     margin-bottom: 2rem;
-    opacity: 0.9;
+    opacity: 1;
+    font-weight: 600;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .launch-actions {
