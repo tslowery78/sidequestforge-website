@@ -674,7 +674,7 @@ a {
 
 .app-image {
     position: relative;
-    height: 300px;
+    height: 500px;
     overflow: hidden;
 }
 
@@ -1940,6 +1940,15 @@ a {
 
     .nav-toggle {
         display: flex;
+    }
+
+    /* Make images shorter on mobile */
+    .hero-visual {
+        height: 510px;
+    }
+
+    .app-image {
+        height: 410px;
     }
 
     .hero-container,
