@@ -328,7 +328,7 @@ a {
 
 .hero-visual {
     position: relative;
-    height: 500px;
+    height: 745px;
 }
 
 .hero-image {
@@ -694,7 +694,7 @@ a {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.85);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -703,27 +703,28 @@ a {
 }
 
 .app-overlay .btn {
-    color: #000000 !important;
-    border-color: #ffffff !important;
     background: #ffffff !important;
+    color: #000000 !important;
+    border: 3px solid #ffffff !important;
     font-weight: 700 !important;
-    text-shadow: none;
-    border-width: 3px !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
     font-size: 1.1rem !important;
+    padding: 12px 24px !important;
+    border-radius: 8px !important;
+    text-decoration: none !important;
+    text-shadow: none !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+    transition: all 0.3s ease !important;
 }
 
 .app-overlay .btn:hover {
     background: #f0f0f0 !important;
     color: #000000 !important;
-    text-shadow: none;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6) !important;
 }
 
 .app-card:hover .app-overlay {
     opacity: 1;
-    background: rgba(0, 0, 0, 0.9);
 }
 
 .app-content {
