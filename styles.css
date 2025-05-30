@@ -331,7 +331,7 @@ a {
 
 .hero-visual {
     position: relative;
-    height: 745px;
+    height: 800px;
 }
 
 .hero-image {
@@ -1982,7 +1982,7 @@ a {
 
     /* Make images shorter on mobile */
     .hero-visual {
-        height: 510px;
+        height: 1100px;
     }
 
     .app-image {
