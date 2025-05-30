@@ -284,9 +284,18 @@
             setTheme(newTheme);
         });
 
-        // Simple mobile menu toggle
-        document.querySelector('.nav-toggle').addEventListener('click', function() {
+        // Simple mobile menu toggle with iPad touch support
+        document.querySelector('.nav-toggle').addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
             navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.nav-menu') && !e.target.closest('.nav-toggle')) {
+                navMenu.classList.remove('active');
+            }
         });
 
         // Close mobile menu when clicking on navigation links
