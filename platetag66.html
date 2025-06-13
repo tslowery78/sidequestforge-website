@@ -264,10 +264,12 @@
                 <div class="beta-signup">
                     <h3>Join the Beta Testing List</h3>
                     <p>Be among the first families to experience PlateTag 66</p>
-                    <div class="newsletter-form">
-                        <input type="email" placeholder="Enter your email for beta updates" class="email-input">
-                        <button class="btn btn-primary">Sign Me Up</button>
-                    </div>
+                    <form action="https://formspree.io/f/xeokgypd" method="POST" class="newsletter-form" id="beta-form">
+                        <input type="email" name="email" placeholder="Enter your email for beta updates" class="email-input" required>
+                        <input type="hidden" name="form-type" value="beta-testing">
+                        <button type="submit" class="btn btn-primary">Sign Me Up</button>
+                        <p class="form-status" style="display: none;"></p>
+                    </form>
                 </div>
             </div>
         </section>
@@ -318,10 +320,12 @@
                         get exclusive beta access, and receive special launch day pricing.
                     </p>
                     <div class="launch-actions">
-                        <div class="newsletter-form large">
-                            <input type="email" placeholder="Enter your email for launch updates" class="email-input">
-                            <button class="btn btn-primary">Notify Me at Launch</button>
-                        </div>
+                        <form action="https://formspree.io/f/xeokgypd" method="POST" class="newsletter-form large" id="launch-form">
+                            <input type="email" name="email" placeholder="Enter your email for launch updates" class="email-input" required>
+                            <input type="hidden" name="form-type" value="launch-notification">
+                            <button type="submit" class="btn btn-primary">Notify Me at Launch</button>
+                            <p class="form-status" style="display: none;"></p>
+                        </form>
                     </div>
                     <div class="launch-info">
                         <p>🎯 Target Launch: Early 2025</p>
@@ -355,6 +359,18 @@
                     <a href="https://twitter.com/SideQuestForge" target="_blank" rel="noopener noreferrer" class="social-link">Twitter</a>
                     <a href="#" class="social-link">Instagram</a>
                     <a href="#" class="social-link">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-newsletter">
+                <div class="newsletter-section">
+                    <h4>Stay Updated on New Adventures</h4>
+                    <p>Get notified about app updates and new releases</p>
+                    <form action="https://formspree.io/f/xzzgrnko" method="POST" class="newsletter-form" id="footer-newsletter-form">
+                        <input type="email" name="email" placeholder="Enter your email address" class="email-input" required>
+                        <input type="hidden" name="form-type" value="general-newsletter">
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                        <p class="form-status" style="display: none;"></p>
+                    </form>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -622,6 +638,47 @@
                 }
             }
         }
+
+        // Form handling
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const form = e.target;
+                const status = form.querySelector('.form-status');
+                const submitButton = form.querySelector('button[type="submit"]');
+                const originalButtonText = submitButton.textContent;
+                
+                try {
+                    submitButton.textContent = 'Sending...';
+                    submitButton.disabled = true;
+                    
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        body: new FormData(form),
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+                    
+                    const data = await response.json();
+                    
+                    if (response.ok) {
+                        status.textContent = 'Thanks for subscribing!';
+                        status.style.color = 'var(--success-color)';
+                        form.reset();
+                    } else {
+                        throw new Error(data.error || 'Something went wrong. Please try again.');
+                    }
+                } catch (error) {
+                    status.textContent = error.message;
+                    status.style.color = 'var(--error-color)';
+                } finally {
+                    status.style.display = 'block';
+                    submitButton.textContent = originalButtonText;
+                    submitButton.disabled = false;
+                }
+            });
+        });
     </script>
 </body>
 </html> 

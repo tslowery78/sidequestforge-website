@@ -48,6 +48,8 @@ body {
     --text-dark: #1e293b;
     --text-medium: #64748b;
     --text-light: #94a3b8;
+    --success-color: #28a745;
+    --error-color: #dc3545;
 }
 
 /* Dark Mode Variables (Default) */
@@ -76,6 +78,8 @@ body {
     --text-muted: #64748b;
     --border-color: #e2e8f0;
     --shadow-color: rgba(0, 0, 0, 0.1);
+    --success-color: #198754;
+    --error-color: #dc3545;
 }
 
 /* Typography */
@@ -220,16 +224,19 @@ a {
 }
 
 /* Buttons */
-.btn {
+.btn, .btn-primary, .btn-secondary, .btn-outline {
     display: inline-block;
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
     text-align: center;
-    transition: all 0.3s ease;
+    border-radius: 8px;
     cursor: pointer;
-    border: none;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
     text-decoration: none;
+    line-height: 1.5;
+    min-width: 120px;
 }
 
 .btn-primary {
@@ -877,7 +884,91 @@ a {
 
 .newsletter-form {
     display: flex;
-    gap: 0.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+}
+
+.newsletter-form.large {
+    max-width: 600px;
+}
+
+.newsletter-form .email-input {
+    padding: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    background: var(--bg-input);
+    color: var(--text-primary);
+    flex: 1 1 auto;
+    min-width: 200px;
+    transition: border-color 0.3s ease;
+    height: 56px;
+    line-height: 1.5;
+}
+
+.newsletter-form .email-input:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+}
+
+.newsletter-form .form-status {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: -2.5rem;
+    left: 0;
+    font-weight: 600;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.newsletter-form .form-status.success {
+    color: var(--text-primary);
+}
+
+.newsletter-form .form-status.error {
+    color: var(--error-color);
+}
+
+.newsletter-form button[type="submit"] {
+    flex-shrink: 0;
+    height: 56px;
+}
+
+.newsletter-form button[type="submit"]:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+@media (min-width: 768px) {
+    .newsletter-form {
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    .newsletter-form .email-input {
+        flex: 1;
+        margin: 0;
+    }
+
+    .newsletter-form button[type="submit"] {
+        width: auto;
+        white-space: nowrap;
+    }
+
+    .newsletter-form .form-status {
+        position: absolute;
+        bottom: -2rem;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
 }
 
 /* App Detail Page Styles */
@@ -2163,4 +2254,33 @@ a {
     text-shadow: none;
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.footer-newsletter {
+    padding: 2rem 0;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+}
+
+.footer-newsletter .newsletter-section {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.footer-newsletter .newsletter-section h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-strong);
+}
+
+.footer-newsletter .newsletter-section p {
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+.footer-bottom {
+    padding-top: 1.5rem;
+    text-align: center;
 } 

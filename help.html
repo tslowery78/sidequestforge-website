@@ -226,45 +226,26 @@
                     <a href="#" class="social-link">LinkedIn</a>
                 </div>
             </div>
+            <div class="footer-newsletter">
+                <div class="newsletter-section">
+                    <h4>Stay Updated on New Adventures</h4>
+                    <p>Get notified about app updates and new releases</p>
+                    <form action="https://formspree.io/f/xzzgrnko" method="POST" class="newsletter-form" id="footer-newsletter-form">
+                        <input type="email" name="email" placeholder="Enter your email address" class="email-input" required>
+                        <input type="hidden" name="form-type" value="general-newsletter">
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                        <p class="form-status" style="display: none;"></p>
+                    </form>
+                </div>
+            </div>
             <div class="footer-bottom">
                 <p>&copy; 2024 SideQuest Forge LLC. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Theme management
-        const themeToggle = document.getElementById('themeToggle');
-        const html = document.documentElement;
-        
-        // Set default theme to dark
-        let currentTheme = localStorage.getItem('theme') || 'dark';
-        
-        function setTheme(theme) {
-            if (theme === 'light') {
-                html.setAttribute('data-theme', 'light');
-                themeToggle.textContent = '☀️';
-            } else {
-                html.removeAttribute('data-theme');
-                themeToggle.textContent = '🌙';
-            }
-            localStorage.setItem('theme', theme);
-            currentTheme = theme;
-        }
-        
-        // Initialize theme
-        setTheme(currentTheme);
-        
-        // Theme toggle event
-        themeToggle.addEventListener('click', function() {
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            setTheme(newTheme);
-        });
+    <script src="theme.js"></script>
+    <script src="form-handler.js"></script>
 
-        // Simple mobile menu toggle
-        document.querySelector('.nav-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-menu').classList.toggle('active');
-        });
-    </script>
 </body>
 </html> 

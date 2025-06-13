@@ -177,8 +177,12 @@
                                 Stay tuned for updates!
                             </p>
                             <div class="newsletter-signup">
-                                <input type="email" placeholder="Enter your email" class="email-input">
-                                <button class="btn btn-primary">Notify Me</button>
+                                <form action="https://formspree.io/f/xeokgypd" method="POST" class="newsletter-form" id="coming-soon-form">
+                                    <input type="email" name="email" placeholder="Enter your email" class="email-input" required>
+                                    <input type="hidden" name="form-type" value="coming-soon-notification">
+                                    <button type="submit" class="btn btn-primary">Notify Me</button>
+                                    <p class="form-status" style="display: none;"></p>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -213,14 +217,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="newsletter-section">
-                        <h3>Stay Updated on New Adventures</h3>
-                        <p>Get notified about app updates and new releases</p>
-                        <div class="newsletter-form">
-                            <input type="email" placeholder="Enter your email address" class="email-input">
-                            <button class="btn btn-primary">Subscribe</button>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -230,8 +226,10 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <video src="assets/sidequest_forge.mp4" alt="SideQuest Forge LLC" class="logo" autoplay muted loop playsinline></video>
-                    <span class="logo-text">SideQuest Forge</span>
+                    <a href="index.html">
+                        <video src="assets/sidequest_forge.mp4" alt="SideQuest Forge LLC" class="logo" autoplay muted loop playsinline></video>
+                        <span class="logo-text">SideQuest Forge</span>
+                    </a>
                 </div>
                 <div class="footer-links">
                     <a href="#platetag66">PlateTag 66</a>
@@ -248,77 +246,25 @@
                     <a href="#" class="social-link">LinkedIn</a>
                 </div>
             </div>
+            <div class="footer-newsletter">
+                <div class="newsletter-section">
+                    <h4>Stay Updated on New Adventures</h4>
+                    <p>Get notified about app updates and new releases</p>
+                    <form action="https://formspree.io/f/xzzgrnko" method="POST" class="newsletter-form" id="newsletter-form">
+                        <input type="email" name="email" placeholder="Enter your email address" class="email-input" required>
+                        <input type="hidden" name="form-type" value="general-newsletter">
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                        <p class="form-status" style="display: none;"></p>
+                    </form>
+                </div>
+            </div>
             <div class="footer-bottom">
                 <p>&copy; 2024 SideQuest Forge LLC. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Theme management
-        const themeToggle = document.getElementById('themeToggle');
-        const html = document.documentElement;
-        const navMenu = document.querySelector('.nav-menu');
-        
-        // Set default theme to dark
-        let currentTheme = localStorage.getItem('theme') || 'dark';
-        
-        function setTheme(theme) {
-            if (theme === 'light') {
-                html.setAttribute('data-theme', 'light');
-                themeToggle.textContent = '☀️';
-            } else {
-                html.removeAttribute('data-theme');
-                themeToggle.textContent = '🌙';
-            }
-            localStorage.setItem('theme', theme);
-            currentTheme = theme;
-        }
-        
-        // Initialize theme
-        setTheme(currentTheme);
-        
-        // Theme toggle event
-        themeToggle.addEventListener('click', function() {
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            setTheme(newTheme);
-        });
-
-        // Simple mobile menu toggle with iPad touch support
-        document.querySelector('.nav-toggle').addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            navMenu.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('.nav-menu') && !e.target.closest('.nav-toggle')) {
-                navMenu.classList.remove('active');
-            }
-        });
-
-        // Close mobile menu when clicking on navigation links
-        document.querySelectorAll('.nav-menu .nav-link').forEach(link => {
-            link.addEventListener('click', function() {
-                // Close the mobile menu
-                navMenu.classList.remove('active');
-            });
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
+    <script src="theme.js"></script>
+    <script src="form-handler.js"></script>
 </body>
 </html> 
