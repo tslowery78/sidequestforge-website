@@ -1,0 +1,5 @@
+# app-ads.txt for Sidequest Forge Studio website
+# Paste the exact app-ads entries provided by your ad network(s) below.
+# Example format (do NOT use this literally):
+# google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+google.com, pub-4992101825749773, DIRECT, f08c47fec0942fa0
