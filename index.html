@@ -3,339 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>SideQuest Forge LLC - Turning life's side quests into smart, playful apps</title>
-    <meta name="description" content="SideQuest Forge is a small Texas studio building mobile apps that spark curiosity, coach good habits, and celebrate progress. Discover PlateTag 66 and more.">
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>SideQuest Forge — Apps for Life's Adventures</title>
+    <meta name="description" content="A Texas studio building apps that turn everyday moments into adventures. PlateTag 66, Koda, LoweryLedger, and more.">
+    <link rel="stylesheet" href="styles-new.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header">
         <nav class="nav">
             <div class="nav-container">
-                <div class="nav-logo">
-                    <video src="assets/sidequest_forge.mp4" alt="SideQuest Forge LLC" class="logo" autoplay muted loop playsinline></video>
+                <a href="#" class="nav-logo">
+                    <span class="logo-icon">⚒️</span>
                     <span class="logo-text">SideQuest Forge</span>
-                </div>
+                </a>
                 <ul class="nav-menu">
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#platetag66" class="nav-link">PlateTag 66</a></li>
+                    <li><a href="#apps" class="nav-link">Apps</a></li>
                     <li><a href="#coming-soon" class="nav-link">Coming Soon</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
                     <li><a href="#team" class="nav-link">Team</a></li>
-                    <li><a href="help.html" class="nav-link">Help</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
-                <div class="nav-actions">
-                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                        🌙
-                    </button>
-                    <div class="nav-toggle">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
+                <button class="nav-toggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </nav>
     </header>
 
     <main>
-        <section id="home" class="hero">
-            <div class="hero-container">
-                <div class="hero-content">
-                    <h1 class="hero-title">Turning life's side quests into <span class="highlight">smart, playful apps</span></h1>
-                    <p class="hero-description">
-                        SideQuest Forge is a small Texas studio with a big premise: everyday moments can become adventures worth logging, learning from, and sharing.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#platetag66" class="btn btn-primary">Discover PlateTag 66</a>
-                        <a href="#coming-soon" class="btn btn-secondary">Coming Soon</a>
-                    </div>
-                </div>
-                <div class="hero-visual">
-                    <div class="hero-image">
-                        <img src="assets/sunset_diner.png" alt="PlateTag 66 - Sunset Diner Scene" class="hero-img">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="platetag66" class="featured-app">
+        <!-- Hero: Simple, bold, memorable -->
+        <section class="hero">
+            <div class="hero-bg"></div>
             <div class="container">
-                <h2 class="section-title">Featured App</h2>
-                <div class="app-showcase">
-                    <div class="app-card featured">
-                        <div class="app-image">
-                            <img src="assets/main_screen.png" alt="PlateTag 66 - Main Screen" class="app-img">
-                            <div class="app-overlay">
-                                <a href="platetag66.html" class="btn btn-primary">Learn More</a>
+                <div class="hero-content">
+                    <p class="hero-eyebrow">A Texas indie studio</p>
+                    <h1 class="hero-title">Apps for life's<br><span class="gradient-text">side quests</span></h1>
+                    <p class="hero-subtitle">We build apps that turn everyday moments into adventures worth sharing.</p>
+                    <div class="hero-cta">
+                        <a href="#apps" class="btn btn-primary">See Our Apps</a>
+                        <a href="#coming-soon" class="btn btn-ghost">What's Next →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-scroll">
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- Featured App: PlateTag 66 -->
+        <section id="apps" class="featured-section">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-eyebrow">Available Now</p>
+                    <h2 class="section-title">PlateTag 66</h2>
+                    <p class="section-subtitle">The license plate game, reimagined for modern road trips.</p>
+                </div>
+                
+                <div class="featured-card">
+                    <div class="featured-media">
+                        <img src="assets/main_screen.png" alt="PlateTag 66 app screenshot" class="featured-screenshot">
+                    </div>
+                    <div class="featured-content">
+                        <div class="featured-badge">
+                            <img src="assets/PlateGameIcon-2_noalpha.png" alt="" class="app-icon">
+                            <div>
+                                <span class="badge-live">● Live on App Store</span>
                             </div>
                         </div>
-                        <div class="app-content">
-                            <div class="app-header">
-                                <img src="assets/PlateGameIcon-2_noalpha.png" alt="PlateTag 66 Icon" class="app-icon">
-                                <div class="app-title-section">
-                                    <h3 class="app-title">PlateTag 66</h3>
-                                    <p class="app-subtitle">The Ultimate License Plate Road Trip Game</p>
-                                </div>
-                            </div>
-                            <p class="app-description">
-                                Turn every road trip into an epic license plate hunting adventure. 
-                                Discover hidden murals, learn fascinating state facts, and create 
-                                unforgettable family memories on every journey.
-                            </p>
-                            <div class="app-tags">
-                                <span class="tag">Family</span>
-                                <span class="tag">Travel</span>
-                                <span class="tag">Educational</span>
-                                <span class="tag">GPS</span>
-                            </div>
-                            <div class="app-actions">
-                                <a href="https://apps.apple.com/us/app/platetag66-license-plate-game/id6746414142" target="_blank">
-                                    <img src="assets/app-store-badge.svg" alt="Download on App Store" class="app-store-badge">
-                                </a>
-                            </div>
-                        </div>
+                        <ul class="feature-list">
+                            <li>🗺️ Hunt license plates across all 50 states</li>
+                            <li>🏆 Unlock achievements and track your progress</li>
+                            <li>👨‍👩‍👧‍👦 Perfect for family road trips</li>
+                            <li>📍 GPS-based discoveries and hidden murals</li>
+                        </ul>
+                        <a href="https://apps.apple.com/us/app/platetag66-license-plate-game/id6746414142" target="_blank" class="app-store-link">
+                            <img src="assets/app-store-badge.svg" alt="Download on the App Store">
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Coming Soon -->
         <section id="coming-soon" class="coming-soon-section">
             <div class="container">
-                <h2 class="section-title">Coming Soon</h2>
-                <p class="section-subtitle">We're working on more apps to help you track, plan, and celebrate life's moments.</p>
-                
-                <div class="coming-soon-grid">
-                    <div class="coming-soon-card">
-                        <div class="coming-soon-icon">🥗</div>
-                        <h3>Koda</h3>
-                        <p class="coming-soon-tagline">AI Nutrition Coach</p>
-                        <p class="coming-soon-description">
-                            Your always-on nutrition partner. Chat naturally about meals, 
-                            get personalized insights, and build healthier habits with an 
-                            AI that understands your body's signals.
-                        </p>
-                        <div class="app-tags">
-                            <span class="tag">Health</span>
-                            <span class="tag">AI</span>
-                            <span class="tag">Nutrition</span>
-                        </div>
-                        <p class="coming-soon-date">Coming 2026</p>
-                    </div>
-                    
-                    <div class="coming-soon-card">
-                        <div class="coming-soon-icon">💰</div>
-                        <h3>LoweryLedger</h3>
-                        <p class="coming-soon-tagline">Future-First Financial Planning</p>
-                        <p class="coming-soon-description">
-                            Plan your finances forward, then reconcile with reality. 
-                            Net worth forecasting, drag-and-drop reconciliation, and 
-                            spending insights that help you see where you're headed.
-                        </p>
-                        <div class="app-tags">
-                            <span class="tag">Finance</span>
-                            <span class="tag">Planning</span>
-                            <span class="tag">Budgeting</span>
-                        </div>
-                        <p class="coming-soon-date">Coming 2026</p>
-                    </div>
-                    
-                    <div class="coming-soon-card">
-                        <div class="coming-soon-icon">🎄</div>
-                        <h3>LightQuest</h3>
-                        <p class="coming-soon-tagline">Holiday Light Hunt</p>
-                        <p class="coming-soon-description">
-                            A festive scavenger hunt where families "catch" holiday 
-                            decorations with their camera. Rack up points by rarity, 
-                            compete on leaderboards, and discover the best lights in town.
-                        </p>
-                        <div class="app-tags">
-                            <span class="tag">Family</span>
-                            <span class="tag">Seasonal</span>
-                            <span class="tag">Games</span>
-                        </div>
-                        <p class="coming-soon-date">Coming Holiday 2026</p>
-                    </div>
+                <div class="section-header">
+                    <p class="section-eyebrow">In Development</p>
+                    <h2 class="section-title">What's Next</h2>
+                    <p class="section-subtitle">Three more apps launching in 2026.</p>
                 </div>
                 
-                <div class="coming-soon-signup">
-                    <p>Want to be first to know when these launch?</p>
-                    <form action="https://formspree.io/f/xeokgypd" method="POST" class="newsletter-form" id="coming-soon-notify">
-                        <input type="email" name="email" placeholder="Enter your email" class="email-input" required>
-                        <input type="hidden" name="form-type" value="coming-soon-notification">
+                <div class="pipeline-grid">
+                    <article class="pipeline-card">
+                        <div class="card-icon">🥗</div>
+                        <h3>Koda</h3>
+                        <p class="card-tagline">AI Nutrition Coach</p>
+                        <p class="card-desc">Chat naturally about meals. Get insights that actually help. An AI nutrition partner that learns your patterns.</p>
+                        <span class="card-date">2026</span>
+                    </article>
+                    
+                    <article class="pipeline-card">
+                        <div class="card-icon">💰</div>
+                        <h3>LoweryLedger</h3>
+                        <p class="card-tagline">Future-First Finances</p>
+                        <p class="card-desc">Plan forward, reconcile back. Net worth forecasting meets drag-and-drop budgeting.</p>
+                        <span class="card-date">2026</span>
+                    </article>
+                    
+                    <article class="pipeline-card">
+                        <div class="card-icon">🎄</div>
+                        <h3>LightQuest</h3>
+                        <p class="card-tagline">Holiday Light Hunt</p>
+                        <p class="card-desc">Catch holiday decorations with your camera. Compete on leaderboards. Find the best lights in town.</p>
+                        <span class="card-date">Holiday 2026</span>
+                    </article>
+                </div>
+                
+                <div class="notify-box">
+                    <p>Get notified when we launch</p>
+                    <form action="https://formspree.io/f/xeokgypd" method="POST" class="notify-form">
+                        <input type="email" name="email" placeholder="you@email.com" required>
+                        <input type="hidden" name="form-type" value="launch-notify">
                         <button type="submit" class="btn btn-primary">Notify Me</button>
                     </form>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="about">
+        <!-- Team: Compact, memorable -->
+        <section id="team" class="team-section">
             <div class="container">
-                <div class="about-content">
-                    <div class="about-text">
-                        <h2 class="section-title">About SideQuest Forge LLC</h2>
-                        <p class="about-description">
-                            We blend thoughtful design, family-first storytelling, and a dash of game-craft to build mobile apps that spark curiosity, coach good habits, and celebrate progress with vibrant visuals and achievement systems that make growth feel like play.
-                        </p>
-                        <div class="about-features">
-                            <div class="feature">
-                                <div class="feature-icon">🗺️</div>
-                                <div class="feature-content">
-                                    <h3>Spark Curiosity</h3>
-                                    <p>Whether you're miles down the highway or curled up with a book, we create moments of discovery.</p>
-                                </div>
-                            </div>
-                            <div class="feature">
-                                <div class="feature-icon">💪</div>
-                                <div class="feature-content">
-                                    <h3>Coach Good Habits</h3>
-                                    <p>From budgets and workouts to daily meds, we make healthy routines feel achievable.</p>
-                                </div>
-                            </div>
-                            <div class="feature">
-                                <div class="feature-icon">🎉</div>
-                                <div class="feature-content">
-                                    <h3>Celebrate Progress</h3>
-                                    <p>Vibrant visuals, gentle nudges, and achievement systems that make growth feel like play.</p>
-                                </div>
-                            </div>
-                            <div class="feature">
-                                <div class="feature-icon">🔧</div>
-                                <div class="feature-content">
-                                    <h3>Forge Sessions</h3>
-                                    <p>Our team approaches each project as a "forge session," shaping useful tools into engaging experiences.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="section-header">
+                    <p class="section-eyebrow">The Team</p>
+                    <h2 class="section-title">Built by two. <span class="subtle">One human, one AI.</span></h2>
                 </div>
-            </div>
-        </section>
-
-        <section id="apps" class="apps">
-            <div class="container">
-                <h2 class="section-title">Our Apps</h2>
-                <div class="apps-grid">
-                    <div class="app-card current">
-                        <div class="app-image">
-                            <img src="assets/collected_plates_sunset.png" alt="PlateTag 66 - Collected Plates at Sunset" class="app-img">
-                        </div>
-                        <div class="app-content">
-                            <div class="app-header">
-                                <img src="assets/PlateGameIcon-2_noalpha.png" alt="PlateTag 66 Icon" class="app-icon-small">
-                                <h3 class="app-title">PlateTag 66</h3>
-                            </div>
-                            <p class="app-description">
-                                The ultimate license plate road trip game for families.
-                            </p>
-                            <div class="app-actions">
-                                <a href="platetag66.html" class="btn btn-outline">Learn More</a>
-                                <a href="https://apps.apple.com/us/app/platetag66-license-plate-game/id6746414142" target="_blank">
-                                    <img src="assets/app-store-badge.svg" alt="Download on App Store" class="app-store-badge">
-                                </a>
-                            </div>
-                        </div>
+                
+                <div class="team-duo">
+                    <div class="team-member">
+                        <div class="member-avatar">👨‍💻</div>
+                        <h3>Tom Lowery</h3>
+                        <p class="member-role">Founder</p>
+                        <p class="member-bio">20 years at NASA. Now building apps that make everyday life more playful.</p>
                     </div>
                     
-                    <div class="app-card coming-soon">
-                        <div class="app-image placeholder koda-preview">
-                            <div class="coming-soon-overlay">
-                                <span>🥗 Koda — Coming 2026</span>
-                            </div>
+                    <div class="team-divider">
+                        <span>+</span>
+                    </div>
+                    
+                    <div class="team-member ai-member">
+                        <div class="member-avatar">
+                            <img src="assets/midas.jpg" alt="Midas">
                         </div>
-                        <div class="app-content">
-                            <h3 class="app-title">Koda</h3>
-                            <p class="app-subtitle">AI Nutrition Coach</p>
-                            <p class="app-description">
-                                Your always-on nutrition partner. Chat naturally about meals, 
-                                get personalized insights, and build healthier habits with an 
-                                AI that understands your body's signals.
-                            </p>
-                            <div class="app-tags">
-                                <span class="tag">Health</span>
-                                <span class="tag">AI</span>
-                                <span class="tag">Nutrition</span>
-                            </div>
-                            <div class="newsletter-signup">
-                                <form action="https://formspree.io/f/xeokgypd" method="POST" class="newsletter-form" id="koda-notify-form">
-                                    <input type="email" name="email" placeholder="Get notified at launch" class="email-input" required>
-                                    <input type="hidden" name="form-type" value="koda-notification">
-                                    <button type="submit" class="btn btn-primary">Notify Me</button>
-                                    <p class="form-status" style="display: none;"></p>
-                                </form>
-                            </div>
-                        </div>
+                        <h3>Midas</h3>
+                        <p class="member-role">AI Partner</p>
+                        <p class="member-bio">Code, research, ops — 24/7. Yes, an AI wrote this bio.</p>
+                        <a href="https://moltbook.com/u/Midas" target="_blank" class="member-link">@Midas on Moltbook</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="team" class="team">
+        <!-- Contact: Minimal -->
+        <section id="contact" class="contact-section">
             <div class="container">
-                <h2 class="section-title">Meet the Team</h2>
-                <div class="team-grid">
-                    <div class="team-card">
-                        <div class="team-avatar">
-                            <span class="avatar-emoji">👨‍💻</span>
-                        </div>
-                        <div class="team-info">
-                            <h3 class="team-name">Tom Lowery</h3>
-                            <p class="team-role">Founder & Lead Developer</p>
-                            <p class="team-bio">
-                                20-year aerospace engineer turned indie app developer. 
-                                Tom brings systems thinking and a passion for family-first 
-                                experiences to every project.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="team-card ai-team-member">
-                        <div class="team-avatar">
-                            <img src="assets/midas.jpg" alt="Midas" class="avatar-img">
-                        </div>
-                        <div class="team-info">
-                            <h3 class="team-name">Midas</h3>
-                            <p class="team-role">AI Partner & COO</p>
-                            <p class="team-bio">
-                                Our AI team member handles code, research, and operations 24/7. 
-                                Midas works alongside Tom to ship features, manage projects, 
-                                and keep the forge running. Yes, an AI wrote this bio.
-                            </p>
-                            <div class="team-links">
-                                <a href="https://moltbook.com/u/Midas" target="_blank" class="team-link">Moltbook</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2 class="section-title">Get In Touch</h2>
                 <div class="contact-content">
-                    <div class="contact-info">
-                        <p class="contact-description">
-                            Wherever you are—on the road, at home, or chasing the next big idea—SideQuest Forge gives you one more reason to look up, press start, and enjoy the journey together.
-                        </p>
-                        <div class="contact-methods">
-                            <div class="contact-method">
-                                <span class="contact-icon">📧</span>
-                                <a href="mailto:hello@sidequestforgestudio.com" class="contact-link">hello@sidequestforgestudio.com</a>
-                            </div>
-                            <div class="contact-method">
-                                <span class="contact-icon">🛠️</span>
-                                <a href="mailto:support@sidequestforgestudio.com" class="contact-link">support@sidequestforgestudio.com</a>
-                            </div>
-                            <div class="contact-method">
-                                <span class="contact-icon">💼</span>
-                                <a href="mailto:business@sidequestforgestudio.com" class="contact-link">business@sidequestforgestudio.com</a>
-                            </div>
-                            <div class="contact-method">
-                                <span class="contact-icon">🐦</span>
-                                <a href="https://twitter.com/SideQuestForge" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">@SideQuestForge</a>
-                            </div>
-                        </div>
+                    <h2>Let's talk</h2>
+                    <p>Questions, feedback, or just want to say hi?</p>
+                    <a href="mailto:hello@sidequestforgestudio.com" class="contact-email">hello@sidequestforgestudio.com</a>
+                    <div class="contact-links">
+                        <a href="https://twitter.com/SideQuestForge" target="_blank">Twitter</a>
+                        <a href="help.html">Help Center</a>
                     </div>
                 </div>
             </div>
@@ -345,41 +184,16 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">
-                    <a href="index.html">
-                        <video src="assets/sidequest_forge.mp4" alt="SideQuest Forge LLC" class="logo" autoplay muted loop playsinline></video>
-                        <span class="logo-text">SideQuest Forge</span>
-                    </a>
+                <div class="footer-brand">
+                    <span class="logo-icon">⚒️</span>
+                    <span>SideQuest Forge</span>
                 </div>
                 <div class="footer-links">
-                    <a href="#platetag66">PlateTag 66</a>
-                    <a href="#about">About</a>
-                    <a href="#apps">Apps</a>
-                    <a href="help.html">Help</a>
-                    <a href="#contact">Contact</a>
                     <a href="privacy.html">Privacy</a>
                     <a href="terms.html">Terms</a>
+                    <a href="help.html">Help</a>
                 </div>
-                <div class="footer-social">
-                    <a href="https://twitter.com/SideQuestForge" target="_blank" rel="noopener noreferrer" class="social-link">Twitter</a>
-                    <a href="#" class="social-link">Instagram</a>
-                    <a href="#" class="social-link">LinkedIn</a>
-                </div>
-            </div>
-            <div class="footer-newsletter">
-                <div class="newsletter-section">
-                    <h4>Stay Updated on New Adventures</h4>
-                    <p>Get notified about app updates and new releases</p>
-                    <form action="https://formspree.io/f/xzzgrnko" method="POST" class="newsletter-form" id="newsletter-form">
-                        <input type="email" name="email" placeholder="Enter your email address" class="email-input" required>
-                        <input type="hidden" name="form-type" value="general-newsletter">
-                        <button type="submit" class="btn btn-primary">Subscribe</button>
-                        <p class="form-status" style="display: none;"></p>
-                    </form>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 SideQuest Forge LLC. All rights reserved.</p>
+                <p class="footer-copy">© 2026 SideQuest Forge LLC. Houston, TX.</p>
             </div>
         </div>
     </footer>
@@ -387,4 +201,4 @@
     <script src="theme.js"></script>
     <script src="form-handler.js"></script>
 </body>
-</html> 
+</html>
