@@ -2284,3 +2284,119 @@ a {
     padding-top: 1.5rem;
     text-align: center;
 } 
+/* Team Section */
+.team {
+    padding: 6rem 0;
+    background: var(--bg-light);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.team-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e5e7eb;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.team-card.ai-team-member {
+    background: linear-gradient(135deg, #fff 0%, #f0f9ff 100%);
+    border-color: var(--primary-blue);
+}
+
+.team-avatar {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar-emoji {
+    font-size: 3rem;
+}
+
+.team-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.25rem;
+}
+
+.team-role {
+    font-size: 1rem;
+    color: var(--primary-blue);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.team-bio {
+    color: var(--text-medium);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.team-links {
+    margin-top: 1rem;
+}
+
+.team-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--primary-blue);
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: background 0.3s ease;
+}
+
+.team-link:hover {
+    background: var(--primary-purple);
+}
+
+/* Koda Preview Styling */
+.koda-preview {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.app-subtitle {
+    font-size: 0.9rem;
+    color: var(--primary-blue);
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+}
+
+/* Dark mode team adjustments */
+[data-theme="dark"] .team-card {
+    background: var(--card-bg);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .team-card.ai-team-member {
+    background: linear-gradient(135deg, var(--card-bg) 0%, #1e3a5f 100%);
+}
+
+[data-theme="dark"] .team-name {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .team-bio {
+    color: var(--text-secondary);
+}
