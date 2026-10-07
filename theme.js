@@ -9,10 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function setTheme(theme) {
         if (theme === 'light') {
             html.setAttribute('data-theme', 'light');
-            themeToggle.textContent = '☀️';
+            if (themeToggle) themeToggle.textContent = '☀️';
         } else {
             html.removeAttribute('data-theme');
-            themeToggle.textContent = '🌙';
+            if (themeToggle) themeToggle.textContent = '🌙';
         }
         localStorage.setItem('theme', theme);
         currentTheme = theme;
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setTheme(currentTheme);
     
     // Theme toggle event
-    themeToggle.addEventListener('click', function() {
+    if (themeToggle) themeToggle.addEventListener('click', function() {
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
         setTheme(newTheme);
     });
