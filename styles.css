@@ -1859,3 +1859,5 @@ html[data-theme="light"] .footer { border-top-color: var(--text); }
 @media (max-width: 768px) {
   .labs-grid { grid-template-columns: 1fr; }
 }
+
+.labs-all { text-align:center; margin-top:24px; font-weight:600; }
