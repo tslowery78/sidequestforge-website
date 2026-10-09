@@ -102,8 +102,6 @@ To run the website locally:
 
 - **General:** hello@sidequestforgestudio.com
 - **Support:** support@sidequestforgestudio.com
-- **Privacy:** privacy@sidequestforgestudio.com
-- **Legal:** legal@sidequestforgestudio.com
 
 ## 📄 License
 
