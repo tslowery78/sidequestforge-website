@@ -1861,3 +1861,8 @@ html[data-theme="light"] .footer { border-top-color: var(--text); }
 }
 
 .labs-all { text-align:center; margin-top:24px; font-weight:600; }
+
+/* 3D Prints: one centered card */
+.prints-section { border-top: 3px solid var(--border); }
+.prints-section .labs-grid { grid-template-columns: 1fr; max-width: 640px; margin: 0 auto; }
+.pricing-grid.single { max-width: 380px; margin: 0 auto; }
