@@ -27,21 +27,43 @@ document.addEventListener('DOMContentLoaded', () => {
         setTheme(newTheme);
     });
 
-    // Simple mobile menu toggle
+    // Keep the mobile menu's visible and announced state in sync.
     const navMenu = document.querySelector('.nav-menu');
     const navToggle = document.querySelector('.nav-toggle');
+    const mobileNav = window.matchMedia('(max-width: 960px)');
 
-    if (navToggle) {
+    function setMenuOpen(open) {
+        if (!navMenu || !navToggle) return;
+        navMenu.classList.toggle('active', open);
+        navToggle.setAttribute('aria-expanded', String(open));
+    }
+
+    if (navMenu && navToggle) {
         navToggle.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
-            navMenu.classList.toggle('active');
+            setMenuOpen(!navMenu.classList.contains('active'));
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+                setMenuOpen(false);
+                navToggle.focus();
+            }
+        });
+
+        mobileNav.addEventListener('change', function() {
+            // Do not leave focus in a menu that becomes hidden on resize.
+            if (mobileNav.matches && navMenu.contains(document.activeElement)) {
+                navToggle.focus();
+            }
+            setMenuOpen(false);
         });
     }
 
     document.addEventListener('click', function(e) {
         if (navMenu && !navMenu.contains(e.target) && navToggle && !navToggle.contains(e.target)) {
-            navMenu.classList.remove('active');
+            setMenuOpen(false);
         }
     });
 
@@ -52,6 +74,12 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
+                    if (navMenu && navMenu.contains(this) && navMenu.classList.contains('active')) {
+                        setMenuOpen(false);
+                        // Continue keyboard navigation from the selected section.
+                        if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+                        target.focus({ preventScroll: true });
+                    }
                     target.scrollIntoView({
                         behavior: 'smooth'
                     });
@@ -62,4 +90,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-}); 
+});

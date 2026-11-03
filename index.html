@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>SideQuest Forge — Apps for Life's Adventures</title>
     <meta name="description" content="A Texas indie studio. PlateTag66 is free on the App Store with no ads. Color Dots, Lumberjack Jack, Stick Clash, Spud HUD and PipPoint are coming soon. Plus 3D print kits and free engineering labs.">
-    <link rel="stylesheet" href="styles.css?v=7">
+    <link rel="stylesheet" href="styles.css?v=8">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -16,7 +16,7 @@
                     <span class="logo-icon">⚒️</span>
                     <span class="logo-text">SideQuest Forge</span>
                 </a>
-                <ul class="nav-menu">
+                <ul class="nav-menu" id="primary-menu">
                     <li><a href="#apps" class="nav-link">Apps</a></li>
                     <li><a href="#coming-soon" class="nav-link">Coming Soon</a></li>
                     <li><a href="#prints" class="nav-link">3D Prints</a></li>
@@ -24,7 +24,7 @@
                     <li><a href="#team" class="nav-link">Team</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
-                <button class="nav-toggle" aria-label="Menu">
+                <button type="button" class="nav-toggle" aria-label="Menu" aria-controls="primary-menu" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -270,7 +270,7 @@
         </div>
     </footer>
 
-    <script src="theme.js?v=5"></script>
+    <script src="theme.js?v=6"></script>
     <script src="form-handler.js"></script>
 </body>
 </html>

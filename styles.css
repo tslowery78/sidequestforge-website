@@ -331,6 +331,10 @@ html[data-theme="light"] .header { box-shadow: 0 4px 0 0 var(--text); border-bot
 
 .nav-toggle {
   display: none;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
   gap: 4px;
   padding: 0.5rem;
@@ -338,6 +342,13 @@ html[data-theme="light"] .header { box-shadow: 0 4px 0 0 var(--text); border-bot
   border: 2px solid var(--border);
   background: var(--surface);
 }
+.nav-toggle:focus-visible,
+.nav-link:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+/* Leave room for the sticky header when navigating to homepage sections. */
+main > section[id] { scroll-margin-top: 5rem; }
 .nav-toggle span {
   display: block;
   width: 22px;
@@ -1762,11 +1773,14 @@ html[data-theme="light"] .footer { border-top-color: var(--text); }
   .modal-next { right: 10px; left: auto; }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 960px) {
   .nav-menu {
     display: none;
     position: absolute;
     top: 100%;
+    max-height: calc(100vh - 100%);
+    max-height: calc(100dvh - 100%);
+    overflow-y: auto;
     left: 0;
     right: 0;
     flex-direction: column;
@@ -1781,7 +1795,9 @@ html[data-theme="light"] .footer { border-top-color: var(--text); }
   .nav-link { padding: 1rem 0.5rem; text-align: center; }
   .nav-toggle { display: flex; }
   .logo-text { display: none; }
+}
 
+@media (max-width: 720px) {
   .hero { padding: 3rem 0 3.5rem; }
   .hero-title { font-size: 1.4rem; }
   .hero-subtitle { font-size: 1.1rem; }
