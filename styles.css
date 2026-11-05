@@ -597,6 +597,20 @@ main > section[id] { scroll-margin-top: 5rem; }
 .app-store-link img { height: 52px; width: auto; }
 .app-store-link:hover { transform: translate(-2px, -2px); filter: drop-shadow(0 0 8px rgba(0, 234, 255, 0.5)); }
 
+.featured-details {
+  display: flex;
+  width: fit-content;
+  max-width: 100%;
+  min-height: 44px;
+  margin-top: 1.25rem;
+  white-space: normal;
+  text-align: center;
+}
+.featured-details:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
 /* =========================================================
    Coming Soon / Pipeline (new index.html)
    ========================================================= */
@@ -1767,6 +1781,7 @@ html[data-theme="light"] .footer { border-top-color: var(--text); }
     text-align: center;
   }
   .featured-badge { justify-content: center; }
+  .featured-details { margin-inline: auto; }
   .feature-list { text-align: left; }
   .pipeline-grid { grid-template-columns: 1fr; }
   .team-duo { flex-direction: column; }
