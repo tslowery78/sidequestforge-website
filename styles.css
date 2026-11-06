@@ -1903,3 +1903,12 @@ html[data-theme="light"] .footer { border-top-color: var(--text); }
 .prints-section { border-top: 3px solid var(--border); }
 .prints-section .labs-grid { grid-template-columns: 1fr; max-width: 640px; margin: 0 auto; }
 .pricing-grid.single { max-width: 380px; margin: 0 auto; }
+
+/* Keep the arcade styling without motion when visitors request it. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

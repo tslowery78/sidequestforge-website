@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         target.focus({ preventScroll: true });
                     }
                     target.scrollIntoView({
-                        behavior: 'smooth'
+                        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
                     });
                 }
             } catch (error) {
