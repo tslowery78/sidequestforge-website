@@ -7,10 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const submitButton = formElement.querySelector('button[type="submit"]');
             const originalButtonText = submitButton.textContent;
             
-            // Clear previous status
-            status.textContent = '';
-            status.style.display = 'none';
+            // Keep progress and results visible, including for live announcements.
             status.classList.remove('success', 'error');
+            status.style.display = 'block';
+            status.textContent = 'Sending...';
 
             try {
                 submitButton.textContent = 'Sending...';
@@ -34,18 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     status.classList.add('error');
                 }
             } catch (error) {
-                status.textContent = error.message;
+                status.textContent = 'Could not send your request. Please check your connection and try again.';
                 status.classList.add('error');
             } finally {
-                status.style.display = 'block';
                 submitButton.textContent = originalButtonText;
                 submitButton.disabled = false;
-
-                setTimeout(() => {
-                    status.style.display = 'none';
-                    status.classList.remove('success', 'error');
-                }, 5000);
             }
         });
     });
-}); 
+});
