@@ -423,17 +423,32 @@ footer a{color:var(--ink)}
 (function () {
   var chips = document.querySelectorAll('.chip');
   var cards = document.querySelectorAll('.card');
-  var markers = {};
   var colors = {home:'#ffc94a',neighborhood:'#ffc94a',park:'#3fb67a',event:'#3fb67a',parade:'#3fb67a',ticketed:'#e8484a'};
 
+  var groups = [];  // one marker per spot; listings at the same spot share it
+  var current = 'all';
+
+  function visible(id) {
+    var c = document.getElementById(id);
+    return !!c && !c.classList.contains('hide');
+  }
+
+  function syncPins() {
+    if (!map) return;
+    groups.forEach(function (g) {
+      var ids = g.ids.filter(visible);
+      g.links.forEach(function (a) { a.style.display = visible(a.dataset.id) ? '' : 'none'; });
+      ids.length ? g.marker.addTo(map) : g.marker.remove();
+    });
+  }
+
   function show(key) {
+    current = key;
     chips.forEach(function (c) { c.classList.toggle('on', c.dataset.k === key); });
     cards.forEach(function (c) {
-      var on = c.dataset.f.split(' ').indexOf(key) >= 0;
-      c.classList.toggle('hide', !on);
-      var m = markers[c.id];
-      if (m && map) { on ? m.addTo(map) : m.remove(); }
+      c.classList.toggle('hide', c.dataset.f.split(' ').indexOf(key) < 0);
     });
+    syncPins();
   }
   chips.forEach(function (c) { c.addEventListener('click', function () { show(c.dataset.k); }); });
 
@@ -451,16 +466,29 @@ footer a{color:var(--ink)}
 
   fetch('listings.json').then(function (r) { return r.json(); }).then(function (pins) {
     var b = new maplibregl.LngLatBounds();
+    var spots = {};
     pins.forEach(function (p) {
+      var k = p.lat + ',' + p.lon;
+      if (!spots[k]) { spots[k] = {p: p, items: []}; }
+      spots[k].items.push(p);
+      b.extend([p.lon, p.lat]);
+    });
+    Object.keys(spots).forEach(function (k) {
+      var s = spots[k], box = document.createElement('div'), links = [];
+      s.items.forEach(function (p) {
+        var a = document.createElement('a'); a.href = '#' + p.id; a.textContent = p.name;
+        a.dataset.id = p.id; a.style.display = 'block';
+        a.addEventListener('click', function () { pick(p.id); });
+        box.appendChild(a); links.push(a);
+      });
       var el = document.createElement('div');
       el.className = 'pin'; el.style.background = el.style.color = '#ffc94a';
-      el.setAttribute('aria-label', p.name);
-      var a = document.createElement('a'); a.href = '#' + p.id; a.textContent = p.name;
-      a.addEventListener('click', function () { pick(p.id); });
-      var m = new maplibregl.Marker({element: el}).setLngLat([p.lon, p.lat])
-        .setPopup(new maplibregl.Popup({offset: 14, closeButton: false}).setDOMContent(a)).addTo(map);
-      markers[p.id] = m; b.extend([p.lon, p.lat]);
+      el.setAttribute('aria-label', s.items.map(function (p) { return p.name; }).join(', '));
+      var m = new maplibregl.Marker({element: el}).setLngLat([s.p.lon, s.p.lat])
+        .setPopup(new maplibregl.Popup({offset: 14, closeButton: false}).setDOMContent(box));
+      groups.push({ids: s.items.map(function (p) { return p.id; }), links: links, marker: m});
     });
+    syncPins();
     if (!b.isEmpty()) map.fitBounds(b, {padding: {top: 30, right: 30, bottom: 50, left: 30}, maxZoom: 12, duration: 0});
   }).catch(function () {});
 })();
