@@ -67,8 +67,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    // Keep native fragment navigation and focus behavior for the skip link.
+    document.querySelectorAll('a[href^="#"]:not(.skip-link)').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             try {

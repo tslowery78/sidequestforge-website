@@ -115,6 +115,24 @@ html[data-theme="light"] body::after { opacity: 0.25; }
 
 main, header, footer { position: relative; z-index: 2; }
 
+.skip-link {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 101;
+  max-width: calc(100% - 2rem);
+  padding: 0.75rem 1rem;
+  background: var(--bg-deep);
+  color: var(--accent);
+  border: 3px solid var(--accent);
+  transform: translateY(calc(-100% - 2rem));
+}
+.skip-link:focus {
+  transform: translateY(0);
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
 img { max-width: 100%; height: auto; display: block; image-rendering: -webkit-optimize-contrast; }
 a { color: var(--accent); text-decoration: none; }
 a:hover { color: var(--primary); }
@@ -347,7 +365,8 @@ html[data-theme="light"] .header { box-shadow: 0 4px 0 0 var(--text); border-bot
   outline: 3px solid var(--accent);
   outline-offset: 3px;
 }
-/* Leave room for the sticky header when navigating to homepage sections. */
+/* Leave room for the sticky header when navigating to homepage content. */
+#main-content,
 main > section[id] { scroll-margin-top: 5rem; }
 .nav-toggle span {
   display: block;
