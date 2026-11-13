@@ -1345,6 +1345,10 @@ html[data-theme="light"] .footer { border-top-color: var(--text); }
   gap: 1.25rem;
 }
 .screenshot-item {
+  min-width: 0;
+  padding: 0;
+  font: inherit;
+  text-align: left;
   border: 3px solid var(--border);
   background: var(--surface);
   box-shadow: var(--pixel-shadow);
@@ -1359,6 +1363,7 @@ html[data-theme="light"] .footer { border-top-color: var(--text); }
 }
 .screenshot { width: 100%; display: block; }
 .screenshot-caption {
+  display: block;
   font-family: var(--font-mono);
   font-size: 0.8rem;
   color: var(--text-dim);

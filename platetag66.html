@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PlateTag 66 - The Ultimate License Plate Road Trip Game</title>
     <meta name="description" content="Turn every road trip into an epic license plate hunting adventure. Discover hidden murals, learn fascinating state facts, and create unforgettable family memories.">
-    <link rel="stylesheet" href="styles.css?v=4">
+    <link rel="stylesheet" href="styles.css?v=17">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -130,46 +130,46 @@
                 <p class="screenshots-instruction" style="text-align: center; color: var(--text-medium); margin-bottom: 2rem;">Click any image to view full size • Use arrow keys or click arrows to navigate</p>
                 <p class="screenshots-instruction-mobile" style="text-align: center; color: var(--text-medium); margin-bottom: 2rem; display: none;">Tap any image to view full size • Swipe left or right to navigate</p>
                 <div class="screenshots-carousel">
-                    <div class="screenshot-item" onclick="openModal('assets/sunset_diner.png', 'Sunset diner scene - perfect road trip atmosphere')">
+                    <button type="button" class="screenshot-item" aria-haspopup="dialog" aria-controls="imageModal" onclick="openModal('assets/sunset_diner.png', 'Sunset diner scene - perfect road trip atmosphere')">
                         <img src="assets/sunset_diner.png" alt="Sunset Diner Scene" class="screenshot">
-                        <p class="screenshot-caption">Sunset diner scene - perfect road trip atmosphere</p>
-                    </div>
-                    <div class="screenshot-item" onclick="openModal('assets/collected_plates_sunset.png', 'Collected license plates at golden hour')">
+                        <span class="screenshot-caption">Sunset diner scene - perfect road trip atmosphere</span>
+                    </button>
+                    <button type="button" class="screenshot-item" aria-haspopup="dialog" aria-controls="imageModal" onclick="openModal('assets/collected_plates_sunset.png', 'Collected license plates at golden hour')">
                         <img src="assets/collected_plates_sunset.png" alt="Collected Plates at Sunset" class="screenshot">
-                        <p class="screenshot-caption">Collected license plates at golden hour</p>
-                    </div>
-                    <div class="screenshot-item" onclick="openModal('assets/main_screen.png', 'Main game screen with license plate collection')">
+                        <span class="screenshot-caption">Collected license plates at golden hour</span>
+                    </button>
+                    <button type="button" class="screenshot-item" aria-haspopup="dialog" aria-controls="imageModal" onclick="openModal('assets/main_screen.png', 'Main game screen with license plate collection')">
                         <img src="assets/main_screen.png" alt="PlateTag 66 Main Game Screen" class="screenshot">
-                        <p class="screenshot-caption">Main game screen with license plate collection</p>
-                    </div>
-                    <div class="screenshot-item" onclick="openModal('assets/Texas_Mural.png', 'Beautiful Texas state mural with facts')">
+                        <span class="screenshot-caption">Main game screen with license plate collection</span>
+                    </button>
+                    <button type="button" class="screenshot-item" aria-haspopup="dialog" aria-controls="imageModal" onclick="openModal('assets/Texas_Mural.png', 'Beautiful Texas state mural with facts')">
                         <img src="assets/Texas_Mural.png" alt="Texas State Mural" class="screenshot">
-                        <p class="screenshot-caption">Beautiful Texas state mural with facts</p>
-                    </div>
-                    <div class="screenshot-item" onclick="openModal('assets/Arizona.png', 'Arizona state collection and information')">
+                        <span class="screenshot-caption">Beautiful Texas state mural with facts</span>
+                    </button>
+                    <button type="button" class="screenshot-item" aria-haspopup="dialog" aria-controls="imageModal" onclick="openModal('assets/Arizona.png', 'Arizona state collection and information')">
                         <img src="assets/Arizona.png" alt="Arizona State Mural" class="screenshot">
-                        <p class="screenshot-caption">Arizona state collection and information</p>
-                    </div>
-                    <div class="screenshot-item" onclick="openModal('assets/Hawaii.png', 'Hawaii state mural and travel facts')">
+                        <span class="screenshot-caption">Arizona state collection and information</span>
+                    </button>
+                    <button type="button" class="screenshot-item" aria-haspopup="dialog" aria-controls="imageModal" onclick="openModal('assets/Hawaii.png', 'Hawaii state mural and travel facts')">
                         <img src="assets/Hawaii.png" alt="Hawaii State Mural" class="screenshot">
-                        <p class="screenshot-caption">Hawaii state mural and travel facts</p>
-                    </div>
-                    <div class="screenshot-item" onclick="openModal('assets/Alaska_Mural.png', 'Alaska state mural and adventure details')">
+                        <span class="screenshot-caption">Hawaii state mural and travel facts</span>
+                    </button>
+                    <button type="button" class="screenshot-item" aria-haspopup="dialog" aria-controls="imageModal" onclick="openModal('assets/Alaska_Mural.png', 'Alaska state mural and adventure details')">
                         <img src="assets/Alaska_Mural.png" alt="Alaska State Mural" class="screenshot">
-                        <p class="screenshot-caption">Alaska state mural and adventure details</p>
-                    </div>
-                    <div class="screenshot-item" onclick="openModal('assets/VT_landscape_mural.png', 'Vermont landscape mural with scenic beauty')">
+                        <span class="screenshot-caption">Alaska state mural and adventure details</span>
+                    </button>
+                    <button type="button" class="screenshot-item" aria-haspopup="dialog" aria-controls="imageModal" onclick="openModal('assets/VT_landscape_mural.png', 'Vermont landscape mural with scenic beauty')">
                         <img src="assets/VT_landscape_mural.png" alt="Vermont State Mural" class="screenshot">
-                        <p class="screenshot-caption">Vermont landscape mural with scenic beauty</p>
-                    </div>
-                    <div class="screenshot-item" onclick="openModal('assets/OK_story_mural.png', 'Oklahoma story mural with rich history')">
+                        <span class="screenshot-caption">Vermont landscape mural with scenic beauty</span>
+                    </button>
+                    <button type="button" class="screenshot-item" aria-haspopup="dialog" aria-controls="imageModal" onclick="openModal('assets/OK_story_mural.png', 'Oklahoma story mural with rich history')">
                         <img src="assets/OK_story_mural.png" alt="Oklahoma State Mural" class="screenshot">
-                        <p class="screenshot-caption">Oklahoma story mural with rich history</p>
-                    </div>
-                    <div class="screenshot-item" onclick="openModal('assets/MN_mural.png', 'Minnesota mural showcasing state highlights')">
+                        <span class="screenshot-caption">Oklahoma story mural with rich history</span>
+                    </button>
+                    <button type="button" class="screenshot-item" aria-haspopup="dialog" aria-controls="imageModal" onclick="openModal('assets/MN_mural.png', 'Minnesota mural showcasing state highlights')">
                         <img src="assets/MN_mural.png" alt="Minnesota State Mural" class="screenshot">
-                        <p class="screenshot-caption">Minnesota mural showcasing state highlights</p>
-                    </div>
+                        <span class="screenshot-caption">Minnesota mural showcasing state highlights</span>
+                    </button>
                 </div>
             </div>
         </section>
@@ -335,14 +335,14 @@
     </footer>
 
     <!-- Image Modal -->
-    <div id="imageModal" class="image-modal">
+    <div id="imageModal" class="image-modal" role="dialog" aria-modal="true" aria-label="PlateTag 66 screenshots" aria-describedby="modalCaption">
         <div class="modal-content">
-            <span class="modal-close" onclick="closeModal()">&times;</span>
-            <button class="modal-nav modal-prev" onclick="prevImage()">‹</button>
-            <button class="modal-nav modal-next" onclick="nextImage()">›</button>
+            <button type="button" class="modal-close" aria-label="Close screenshot viewer" onclick="closeModal()">&times;</button>
+            <button type="button" aria-label="Previous screenshot" class="modal-nav modal-prev" onclick="prevImage()">‹</button>
+            <button type="button" aria-label="Next screenshot" class="modal-nav modal-next" onclick="nextImage()">›</button>
             <img id="modalImage" class="modal-image" src="" alt="">
             <div id="modalCaption" class="modal-caption"></div>
-            <div id="imageCounter" class="image-counter"></div>
+            <div id="imageCounter" class="image-counter" role="status" aria-live="polite" aria-atomic="true"></div>
         </div>
     </div>
 
@@ -351,6 +351,8 @@
         // Modal state variables
         let currentImageIndex = 0;
         let scrollPosition = 0;
+        let galleryTrigger = null;
+        let galleryBackground = [];
         const images = [
             { src: 'assets/sunset_diner.png', caption: 'Sunset diner scene - perfect road trip atmosphere' },
             { src: 'assets/collected_plates_sunset.png', caption: 'Collected license plates at golden hour' },
@@ -376,6 +378,13 @@
                 return;
             }
             
+            // Keep focus and assistive technology inside the open viewer.
+            galleryTrigger = document.activeElement;
+            galleryBackground = Array.from(document.body.children)
+                .filter(element => element !== modal && element.tagName !== 'SCRIPT')
+                .map(element => ({ element, inert: element.inert }));
+            galleryBackground.forEach(({ element }) => { element.inert = true; });
+
             // Store current scroll position
             scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
             
@@ -388,6 +397,7 @@
             
             // Show modal with animation
             modal.classList.add('active');
+            modal.querySelector('.modal-close').focus({ preventScroll: true });
             
             // Prevent body scrolling when modal is open
             document.body.style.overflow = 'hidden';
@@ -401,13 +411,12 @@
         function closeModal() {
             console.log('Closing modal');
             const modal = document.getElementById('imageModal');
-            if (!modal) {
-                console.error('Modal not found');
-                return;
-            }
+            if (!modal || !modal.classList.contains('active')) return;
             
             // Hide modal with animation
             modal.classList.remove('active');
+            galleryBackground.forEach(({ element, inert }) => { element.inert = inert; });
+            galleryBackground = [];
             
             // Restore body scrolling and position
             document.body.style.overflow = '';
@@ -416,7 +425,8 @@
             document.body.style.width = '';
             
             // Restore scroll position
-            window.scrollTo(0, scrollPosition);
+            window.scrollTo({ top: scrollPosition, behavior: 'instant' });
+            if (galleryTrigger) galleryTrigger.focus({ preventScroll: true });
         }
 
         function updateModalImage() {
@@ -426,6 +436,7 @@
             
             if (modalImage && modalCaption) {
                 modalImage.src = images[currentImageIndex].src;
+                modalImage.alt = images[currentImageIndex].caption;
                 modalCaption.textContent = images[currentImageIndex].caption;
                 
                 if (imageCounter) {
@@ -458,13 +469,29 @@
             }
         });
 
-        // Close modal with Escape key
+        // Handle viewer keys only while open; wrap Tab between its controls.
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
+            const modal = document.getElementById('imageModal');
+            if (!modal.classList.contains('active')) return;
+            if (e.key === 'Tab') {
+                const controls = modal.querySelectorAll('button');
+                const first = controls[0];
+                const last = controls[controls.length - 1];
+                if (e.shiftKey && document.activeElement === first) {
+                    e.preventDefault();
+                    last.focus();
+                } else if (!e.shiftKey && document.activeElement === last) {
+                    e.preventDefault();
+                    first.focus();
+                }
+            } else if (e.key === 'Escape') {
+                e.preventDefault();
                 closeModal();
             } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
                 prevImage();
             } else if (e.key === 'ArrowRight') {
+                e.preventDefault();
                 nextImage();
             }
         });
