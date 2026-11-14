@@ -3,8 +3,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('themeToggle');
     const html = document.documentElement;
     
-    // Set default theme to dark
-    let currentTheme = localStorage.getItem('theme') || 'dark';
+    // Theme persistence is optional; blocked storage must not disable navigation.
+    let currentTheme = 'dark';
+    try {
+        currentTheme = localStorage.getItem('theme') || 'dark';
+    } catch {
+        // Keep the default when browser storage is unavailable.
+    }
     
     function setTheme(theme) {
         if (theme === 'light') {
@@ -14,8 +19,12 @@ document.addEventListener('DOMContentLoaded', () => {
             html.removeAttribute('data-theme');
             if (themeToggle) themeToggle.textContent = '🌙';
         }
-        localStorage.setItem('theme', theme);
         currentTheme = theme;
+        try {
+            localStorage.setItem('theme', theme);
+        } catch {
+            // Keep theme changes working for this visit without saving them.
+        }
     }
     
     // Initialize theme
