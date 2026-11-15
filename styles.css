@@ -1603,7 +1603,8 @@ html[data-theme="light"] .footer { border-top-color: var(--text); }
 }
 .faq-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* Fit narrow screens while keeping the existing desktop card layout. */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   gap: 1.25rem;
 }
 .faq-item {
